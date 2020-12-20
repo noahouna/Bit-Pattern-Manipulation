@@ -1,0 +1,14 @@
+0011 0000 0000 0000 ; Start the program at location x3000
+0010 000 011111111  ; Load bit pattern from location x3100 into register R0
+0010 001 011111111  ; Load shift amount from location x3101 into register R1
+0001 000 000100000  ; Add 0 to bit pattern to set condition code
+0000 100 000000101  ; Branch if the bit pattern starts with 1
+0001 000 000 000 000 ; Adds R0 to itself to achieve left bit shift
+0001 001 001 1 11111 ; Adds -1 to shift amount to decrement
+0000 001 111111011  ; Branch back to set condition code if R1 is not 0
+0011 000 011111010  ; Store shifted bit pattern in location x3102
+1111 0000 0010 0101 ; TRAP instruction and trap vector x25 tell computer to stop
+
+0001 000 000 000 000 ; Adds R0 to itself to achieve left bit shift
+0001 000 000 100001  ; Adds 1 to bit pattern to achieve bit rotation
+0000 111 111111001   ; Branch to decrement shift amount
