@@ -12,3 +12,6 @@ Instructions to download the LC3 simulator can be found on [Professor Yale Patt'
 With LC3tools, convert all files to .obj to run
 
 left_shift.bin obtains a bit pattern from x3100 in memory and shifts all bits to the left by a specified amount found in x3101 in memory. It then stores the result in x3102 in memory.
+
+left_rotate.bin obtains a bit pattern from x3100 in memory and rotates all bits to the left by a specified amount found in x3101 in memory. It then stores the result in x3102 in memory.
+
